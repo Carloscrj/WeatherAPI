@@ -68,9 +68,9 @@ public class WeatherActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     WeatherRes weatherRes = response.body();
                     tvCiudad.setText(weatherRes.getTimezone());
-                    // Obtenemos el nombre del recurso que queremos mostrar en el ImageView.
-                    int resourceIdFoto = getApplicationContext().getResources().getIdentifier(weatherRes.getCurrently().getIcon(), "drawable", getApplicationContext().getPackageName());
-                    ivIcono.setImageResource(resourceIdFoto);
+                    // Obtenemos la imagen que queremos mostrar en el ImageView.
+                    Drawable icono = getResources().getDrawable(weatherRes.getCurrently().getIconId(), getApplicationContext().getTheme());
+                    ivIcono.setImageDrawable(icono);
                     int hora = weatherRes.getCurrently().getTime();
                     // Creamos un objeto Date con la hora que nos da la API en milisegundos para despues convertirlo a formato hora y minutos.
                     Date date = new Date(hora * 1000);
