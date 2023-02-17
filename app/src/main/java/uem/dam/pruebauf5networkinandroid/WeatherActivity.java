@@ -48,7 +48,13 @@ public class WeatherActivity extends AppCompatActivity {
 
         Coordenadas coordenadas = getIntent().getParcelableExtra(MainActivity.CLAVE_COORDENADAS);
 
-        consumirWS(coordenadas.getLatitud(), coordenadas.getLongitud());
+         if (isNetworkAvailable()){
+            consumirWS(coordenadas.getLatitud(), coordenadas.getLongitud());
+        } else {
+            Toast.makeText(this, "No hay conexión a internet", Toast.LENGTH_SHORT).show();
+        }
+
+        
     }
 
     private void consumirWS(double latitud, double longitud) {
@@ -92,6 +98,22 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+     private boolean isNetworkAvailable() {
+        boolean isAvailable=false;
+        //Gestor de conectividad
+        ConnectivityManager manager = (ConnectivityManager)
+                getSystemService(WeatherActivity.CONNECTIVITY_SERVICE);
+
+        //Objeto que recupera la información de la red
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        //Si la información de red no es nula y estamos conectados
+        //la red está disponible
+        if(networkInfo!=null && networkInfo.isConnected()){
+            isAvailable=true;
+        }
+        return isAvailable;
     }
 
 
