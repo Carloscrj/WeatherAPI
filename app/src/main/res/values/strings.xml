@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PruebaUF5NetworkinAndroid</string>
+    <string name="et_latitud">Latitud</string>
+    <string name="et_longitud">Longitud</string>
+    <string name="btn_tiempo">CONSULTAR TIEMPO</string>
+    <string name="tv_humedad">HUMEDAD</string>
+    <string name="tv_lluvia">LLUVIA</string>
+</resources>

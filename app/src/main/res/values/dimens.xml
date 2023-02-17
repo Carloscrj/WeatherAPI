@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_ciudad_size">24sp</dimen>
+    <dimen name="tv_hora">16sp</dimen>
+    <dimen name="tv_temperatura">16sp</dimen>
+    <dimen name="tv_humedadTitulo">20sp</dimen>
+    <dimen name="tv_lluviaTitulo">20sp</dimen>
+    <dimen name="tv_lluvia_elemento">16dp</dimen>
+    <dimen name="tv_humedad_elemento">16sp</dimen>
+    <dimen name="tv_prediccion">20sp</dimen>
+</resources>
